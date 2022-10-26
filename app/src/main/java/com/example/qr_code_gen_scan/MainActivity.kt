@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.ImageView
 import androidmads.library.qrgenearator.QRGContents
 import androidmads.library.qrgenearator.QRGEncoder
-import java.nio.channels.WritePendingException
 
 class MainActivity : AppCompatActivity() {
     var im: ImageView? = null
