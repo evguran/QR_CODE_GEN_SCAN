@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         bGenerate = findViewById(R.id.button)
         bScanner = findViewById(R.id.bScan)
         tvText = findViewById(R.id.tvText)
+        tvText?.onFocusChangeListener {}
         bGenerate?.setOnClickListener {
             generateQRCode(tvText?.text.toString())
         }
@@ -83,4 +84,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+}
+
+private fun TextView.onFocusChangeListener(value: () -> Unit) {
+
+}
+
 }
