@@ -1,5 +1,6 @@
 package com.example.qr_code_gen_scan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,7 +27,10 @@ class ScannerActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     }
 
     override fun handleResult(result: Result?) {
-        Log.d("MyLog", "Result: ${result?.contents}")
+        // Log.d("MyLog", "Result: ${result?.contents}")
+        val i = Intent()
+        i.putExtra("scanResult", result?.contents)
+        setResult(RESULT_OK, i)
         finish()
     }
 }
