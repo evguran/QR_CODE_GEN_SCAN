@@ -27,5 +27,6 @@ class ScannerActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
 
     override fun handleResult(result: Result?) {
         Log.d("MyLog", "Result: ${result?.contents}")
+        finish()
     }
 }
