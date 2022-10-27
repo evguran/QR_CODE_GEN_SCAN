@@ -9,8 +9,8 @@ import androidmads.library.qrgenearator.QRGEncoder
 
 class MainActivity : AppCompatActivity() {
 
-    var im: ImageView? = null
-    var bGenerate: Button? = null
+    private var im: ImageView? = null
+    private var bGenerate: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity() {
         im = findViewById(R.id.imageView)
         bGenerate = findViewById(R.id.button)
         bGenerate?.setOnClickListener {
-            GenerateQRCode("Туйа, мин эйигин таптыыбын")
+            generateQRCode("Туйа, мин эйигин таптыыбын")
         }
     }
 
-    private fun GenerateQRCode(text: String) {
+    private fun generateQRCode(text: String) {
         val qrGenerator = QRGEncoder(text, null, QRGContents.Type.TEXT, 600)
         try {
             val bMap = qrGenerator.getBitmap()
